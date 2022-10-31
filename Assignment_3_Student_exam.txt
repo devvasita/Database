@@ -1,0 +1,35 @@
+Assignment 1
+
+
+CREATE table student
+(
+Roll_no  int  AUTO_INCREMENT PRIMARY KEY,
+ name varchar (100),
+  Branch varchar(100)
+);
+
+Insert  into student VALUES
+(1, 'Jay' , 'Computer Science'),
+(2,'Suhani','Electronic and com'),
+(3,'Kriti','Electronic and com')
+
+CREATE Table Exam
+(
+    roll_no int ,
+    S_code varchar (100),
+    Marks varchar(100),
+    P_code varchar(100),
+    FOREIGN KEY (roll_no) REFERENCES student(Roll_no)
+)
+
+INSERT into exam VALUES
+('1','CS11','50','CS'),
+('1','CS12','60','CS'),
+('2','EC101','66','EC'),
+('2','EC102','70','EC'),
+('3','EC101','45','EC'),
+('3','EC102','50','EC') 
+ 
+ 
+ 
+ 

@@ -1,0 +1,20 @@
+Assignment   
+
+
+
+CREATE table basic 
+(  first_name varchar (100),
+    last_name varchar (100),
+    Address varchar(100),
+    city varchar(100),
+    age int (5)
+)
+insert into basic VALUES
+('Micky','Mouse','123 Fantsy  way', 'Anaheim', 73),
+('Bat','Man','321 Cavern Ave','Gotham', 54),
+('Wonder','Woman','987 Truth way','Paradise',39),
+('Donald','Duck','555 Quack Street','Mallard',65),
+('Bugs','Bunny','567 Carrot Street','Rascal',58),
+('Willy','Coyote','999 Acme Way','Canyon',61),
+('Cat','Woman','234 Purrfect Street','Hairball',32),
+('Tweety','Bird','543','Itotlaw',28)
