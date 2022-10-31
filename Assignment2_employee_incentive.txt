@@ -1,0 +1,105 @@
+Assignment 2
+CREATE DATABASE assignment2;
+
+Create table employee
+(
+    Employee_id int AUTO_INCREMENT PRIMARY key,
+    first_NAME varchar(100),
+    Last_name varchar(100),
+    Salary Varchar(100),
+    joining_date varchar(100),
+    Department varchar(100)
+)
+
+
+insert into employee VALUES
+('1','John','Abraham','1000000','01-Jan-13','Banking'),
+('2','Michael','Clarke','800000','01-Jan-13','Insurance'),
+('3','Roy','Thomas','700000','01-Feb-13','Banking'),
+('4','Tom','Jose','600000','01-Feb-13','Insurance'),
+('5','Jerry','Pinto','650000','01-Feb-13','Insurance'),
+('6','Philip','Mathew','750000','01-Jan-13','Services'),
+('7','Testname1','123','650000','01-Jan-13','Services'),
+('8','Testname2','Lname','600000','01-Feb-13','Insurance')
+
+create table incentive
+(
+    Employee_ref_id int ,
+    Incentive_date varchar(100),
+    Incentive_amount int ,
+    
+    FOREIGN key (Employee_ref_id) REFERENCES employee(Employee_id)
+
+)
+
+INSERT into incentive VALUES
+
+('1','01-FEB-13','5000'),
+('2','01-FEB-13','3000'),
+('3','01-FEB-13','4000'),
+('1','01-JAN-13','4500'),
+('2','01-JAN-13','3500')
+
+
+a) Get First_Name from employee table using Tom name “Employee Name”.
+	
+	SELECT first_NAME from employee ;
+
+
+b) Get FIRST_NAME, Joining Date, and Salary from employee table.
+
+	SELECT first_NAME , joining_date ,Salary from employee
+
+	
+c) Get all employee details from the employee table order by First_Name
+Ascending and Salary descending?
+	
+	SELECT * FROM `employee` ORDER by first_NAME ASC,Salary DESC;
+
+
+d) Get employee details from employee table whose first name contains ‘J’.
+
+	SELECT * from employee where first_NAME like 'j%'
+
+
+e) Get department wise maximum salary from employee table order by salary
+ascending?
+
+	SELECT Department, MAX(Salary) from employee GROUP BY department;
+
+
+
+f) Select first_name, incentive amount from employee and incentives table for
+those employees who have incentives and incentive amount greater than 3000
+
+	SELECT first_NAME, incentive_amount FROM `employee` JOIN incentive ON employee.employee_id=incentive.employee_ref_id WHERE incentive_amount >3000
+
+
+
+
+g) Create After Insert trigger on Employee table which insert records in view
+table 
+
+CREATE table view_table
+(
+     t_id int AUTO_INCREMENT PRIMARY KEY ,
+     t_first_name varchar(100),
+     t_last_name varchar(100),
+     t_salary varchar(100),
+     t_joining_date varchar(100),
+     t_department varchar(100),
+     t_time timestamp ,
+     t_action varchar(100)
+)
+
+DELIMITER $$
+CREATE TRIGGER insert_trigger AFTER INSERT on employee for EACH row 
+
+BEGIN
+
+	INSERT into view_table (t_first_name,t_last_name,t_salary,t_joining_date,t_department,t_action) VALUES
+    	(new.first_name,new.last_name,new.salary,new.joining_date,new.department,"Record Inserted");
+        
+END  $$      
+	
+
