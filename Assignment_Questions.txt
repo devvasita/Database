@@ -1,0 +1,70 @@
+What do you Understand by Database ?
+
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system.
+A database is usually controlled by a database management system (DBMS).
+
+
+
+What is Normalization?
+	
+Normalization is a database design technique that reduces data redundancy and eliminates undesirable characteristics
+like Insertion, Update and Deletion Anomalies.
+		
+
+What is Difference between DBMS and RDBMS?
+
+DBMS stands for Database Management System, and RDBMS is the acronym for the Relational Database Management system.
+In DBMS, the data is stored as a file, whereas in RDBMS, data is stored in the form of tables.
+
+
+What is MF Cod Rule of RDBMS Systems?
+
+Every database has tables, and constraints cannot be referred to as a rational database system. And if any database has only relational data model, it cannot be a Relational Database System (RDBMS). So, some rules define a database to be the correct RDBMS. These rules were developed by Dr. Edgar F. Codd (E.F. Codd) in 1985, who has vast research knowledge on the Relational Model of database Systems. Codd presents his 13 rules for a database to test the concept of DBMS against his relational model, and if a database follows the rule, it is called a true relational database (RDBMS).
+
+What do you understand By Data Redundancy?
+
+Data redundancy occurs when the same data point is multiplied across the database and can be found repeated in an unnecessary form.
+A common example of data redundancy is when a name and address are both present in different columns within a table. 
+
+
+What is DDL Interpreter?
+
+Data Definition Language (DDL) is used to create and modify the structure of objects in a database using predefined commands and a specific syntax. 
+These database objects include tables, sequences, locations, aliases, schemas and indexes.
+
+What is DML Compiler in SQL?
+
+A data manipulation language (DML) is a computer programming language used for adding (inserting), deleting, and modifying (updating) data in a database.
+
+
+What is SQL Key Constraints writing an Example of SQL Key Constraints
+
+SQL constraints are used to specify rules for the data in a table.
+Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. 
+Eample :
+NOT NULL - Ensures that a column cannot have a NULL value
+UNIQUE - Ensures that all values in a column are different
+PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+FOREIGN KEY - Prevents actions that would destroy links between tables
+CREATE INDEX - Used to create and retrieve data from the database very quickly
+
+
+What is save Point? How to create a save Point write a Query?
+
+A SAVEPOINT is a point in a transaction in which you can roll the transaction back to a certain point without rolling back the entire transaction.
+Syntax for Savepoint command:              SAVEPOINT SAVEPOINT_NAME; 
+
+
+What is trigger and how to create a Trigger in SQL? 
+
+A trigger is a special type of stored procedure that automatically runs when an event occurs in the database server. 
+DML triggers run when a user tries to modify data through a data manipulation language (DML) event.
+DML events are INSERT, UPDATE, or DELETE statements on a table or view. 
+Syntax:
+
+create trigger [trigger_name] 
+[before | after]  
+{insert | update | delete}  
+on [table_name]  
+[for each row]  
+[trigger_body] 
